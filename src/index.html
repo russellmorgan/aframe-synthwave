@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style src="scss/main.scss"></style>
   <title>A-Frame</title>
 </head>
+
 <body>
+  <a-scene>
+
+    <a-sky color="#222"></a-sky>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#333"></a-plane>
+
+    <a-light type="ambient" color="#fff"></a-light>
+    
+    <!-- Primitives. -->
+    <a-box position="-1 0.6 -3" rotation="0 45 0" color="#4CC3D9" wireframe></a-box>
+    <a-sphere position="0 1.35 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+    <a-cylinder position="1 0.85 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+  </a-scene>
+
+  <!-- background audio...might move this to a-frame -->
+  <div class="audio">
+    <audio src="audio/feel-the-air.mp3" controls="controls">
+  </div>
+  
   <script src="index.js"></script>
 </body>
+
 </html>
