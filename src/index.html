@@ -5,22 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="index.js"></script>
   <style src="scss/main.scss"></style>
   <title>A-Frame</title>
 </head>
 
 <body>
   <a-scene>
+    <!-- 3D assets loaded here-->
+    <a-assets>
+      <a-asset-item id="room" src="./assets/base-room.obj"></a-asset-item>
+      <a-asset-item id="room-mtl" src="./assets/base-room.mtl"></a-asset-item>
+    </a-assets>
 
+    <!-- lighting and environment -->
     <a-sky color="#222"></a-sky>
-    <a-plane rotation="-90 0 0" width="30" height="30" color="#333"></a-plane>
+    <a-entity id="spot-light" light="type: spot; angle: 45; distance: 20; castShadow: true; intensity:0.8" position="1.65 2.5 4.5" rotation="0 0 0"></a-entity>
 
-    <a-light type="ambient" color="#fff"></a-light>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#333"></a-plane>
     
-    <!-- Primitives. -->
-    <a-box position="-1 0.6 -3" rotation="0 45 0" color="#4CC3D9" wireframe></a-box>
-    <a-sphere position="0 1.35 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-    <a-cylinder position="1 0.85 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    
+    <a-obj-model id="main-room" src="./assets/base-room.obj" scale=".1 .1 .1" rotation="0 -180 0" position="6 .1 -10" color="#fff" shadow="receive: true"></a-obj-model>
+
+    <!-- Primitives for testing -->
+    <!-- <a-box position="-1 0.6 -3" rotation="0 45 0" color="#4CC3D9" wireframe></a-box> -->
+
 
   </a-scene>
 
@@ -29,7 +38,6 @@
     <audio src="audio/feel-the-air.mp3" controls="controls">
   </div>
   
-  <script src="index.js"></script>
 </body>
 
 </html>
